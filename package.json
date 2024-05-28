@@ -4,6 +4,8 @@
   "description": "dashboard tasks manager",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve",
+    "build": "webpack build --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,13 +24,24 @@
   },
   "homepage": "https://github.com/DiegoT4l/dashboard-tasks#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.77.2",
+    "sass-loader": "^14.2.1",
     "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1"
   }
