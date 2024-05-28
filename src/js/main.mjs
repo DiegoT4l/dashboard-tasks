@@ -1,3 +1,4 @@
+import $ from "jquery";
 import TaskManager from './taskManager.mjs';
 
 const taskManager = new TaskManager();

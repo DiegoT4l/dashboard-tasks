@@ -3,6 +3,13 @@
 const path = require('path')
 const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+
+new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+});
+
 
 module.exports = {
     mode: 'development',
