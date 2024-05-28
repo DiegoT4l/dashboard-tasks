@@ -1,0 +1,24 @@
+{
+  "name": "dashboard-tasks",
+  "version": "1.0.0",
+  "description": "dashboard tasks manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoT4l/dashboard-tasks.git"
+  },
+  "keywords": [
+    "dashboard",
+    "tasks",
+    "manager"
+  ],
+  "author": "DiegoT4l",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DiegoT4l/dashboard-tasks/issues"
+  },
+  "homepage": "https://github.com/DiegoT4l/dashboard-tasks#readme"
+}
