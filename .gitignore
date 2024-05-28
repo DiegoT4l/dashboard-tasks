@@ -1,0 +1,37 @@
+# Ignored IDEs Files
+.idea
+.vscode
+
+# Ignored Node Files
+node_modules
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Ignored Build Files
+build
+dist
+*.log
+
+# Ignored OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+ehthumbs_w10.db
+ehthumbs_w11.db
+
+# Ignored Editor Files
+*.swp
+*.swo
+*.swn
+*.swm
+
+# Ignored Archive Files
+*.zip
+*.rar
+*.gz
+*.tar
+*.tgz
+*.bzip
+*.bzip2
+*.7z

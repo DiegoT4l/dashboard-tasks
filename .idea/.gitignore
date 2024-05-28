@@ -6,3 +6,21 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# Gradle files
+.gradle/
+# Mongo Explorer plugin files
+/mongoSettings.xml
+# File-based HTTP Client requests
+/httpRequests/
+# Database Navigator plugin files
+/databaseNavigator/
+# Rest Client plugin files
+/restClient/
+# MPD plugin files
+/mpd.xml
+# Atlassian Connector plugin files
+/atlassian.xml
+# JIRA plugin files
+/jira.xml
+# YouTrack plugin files
+/youtrack.xml
