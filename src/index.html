@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Tasks</title>
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
+
 <body>
-<nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Dashboard de Tareas</span>
-</nav>
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Agregar Nueva Tarea</h2>
-            <form id="task-form">
-                <div class="form-group">
-                    <label for="task-name">Nombre de la Tarea</label>
-                    <input type="text" class="form-control" id="task-name" required>
+    <nav class="navbar navbar-light bg-light">
+        <h1 class="navbar-brand mb-0 h1">Dashboard de Tareas</h1>
+    </nav><!-- .navbar -->
+
+    <div class="accordion" id="accordionCreateTask">
+        <div class="accordion-item">
+            <h2 class="accordion-header flex">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <h2 class="display-6 navbar-brand mb-0 h2">
+                        <i class="bi bi-plus-circle-dotted"></i>&nbsp;AGREGAR NUEVA TAREA
+                    </h2>
+                </button>
+            </h2><!-- .accordion header -->
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionCreateTask">
+                <div class="accordion-body">
+                    <div class="col-md-6">
+                        <form id="task-form">
+                            <div class="form-group">
+                                <label for="task-name">Nombre de la Tarea</label>
+                                <input type="text" class="form-control" id="task-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="task-desc">Descripción</label>
+                                <textarea class="form-control" id="task-desc" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar Tarea</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="task-desc">Descripción</label>
-                    <textarea class="form-control" id="task-desc" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Agregar Tarea</button>
-            </form>
+            </div><!-- .accordion body -->
         </div>
-        <div class="col-md-6">
-            <h2>Lista de Tareas</h2>
-            <ul id="task-list" class="list-group"></ul>
+    </div><!-- .add new task -->
+
+    <div class="container mt-4">
+        <div class="col">
+            <div class="col-md-6">
+                <h2>Lista de Tareas</h2>
+                <ul id="task-list" class="list-group"></ul>
+            </div>
         </div>
-    </div>
-</div>
-<script type="text/module" src="js/main.mjs"></script>
+    </div> <!-- .task list -->
+
+    <script type="text/module" src="js/main.mjs"></script>
 </body>
+
 </html>
