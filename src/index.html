@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
     <title>Dashboard Tasks</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark">
         <h1 class="mb-0">TASK DASHBOARD</h1>
     </nav><!-- .navbar -->
 
     <div class="accordion" id="accordionCreateTask">
-        <div class="accordion-item">
+        <div class="accordion-item ">
             <h2 class="accordion-header mb-0">
                 <button class="accordion-button d-flex justify-content-center align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
@@ -22,7 +23,7 @@
             </h2><!-- .accordion header -->
             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionCreateTask">
                 <div class="accordion-body">
-                    <div class="col-md-6">
+                    <div class="col-md-6 container">
                         <form id="task-form">
                             <div class="form-group">
                                 <label for="task-name">Nombre de la Tarea</label>
@@ -32,7 +33,7 @@
                                 <label for="task-desc">Descripción</label>
                                 <textarea class="form-control" id="task-desc" rows="3"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Agregar Tarea</button>
+                            <button type="submit" class="btn btn-primary mt-4">Agregar Tarea</button>
                         </form>
                     </div>
                 </div>
