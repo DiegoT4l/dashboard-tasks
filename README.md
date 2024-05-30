@@ -61,5 +61,7 @@ To deploy this project run
 ## Badges
 
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ad70b4b5-f233-4fc6-b132-7274f4452174/deploy-status)](https://app.netlify.com/sites/dashtask/deploys)
+
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
