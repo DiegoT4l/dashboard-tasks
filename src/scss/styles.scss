@@ -1,5 +1,5 @@
 // Import all of Bootstrap's CSS
-// @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 // Configuration
 @import "bootstrap/scss/functions";
@@ -28,13 +28,7 @@
 // Utilities
 @import "bootstrap/scss/utilities/api";
 
+// Custom styles
+@import 'base';
+@import 'layout';
 
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-body {
-    line-height: 2;
-}

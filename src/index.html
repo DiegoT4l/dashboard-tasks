@@ -1,54 +1,95 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
     <title>Dashboard Tasks</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <h1 class="mb-0">TASK DASHBOARD</h1>
-    </nav><!-- .navbar -->
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <!-- Sidebar -->
+            <aside class="col-md-3 bg-white shadow-md p-4">
+                <h1 class="fs-3 fw-bold mb-4">Task Master</h1>
+                <nav class="nav flex-column mb-5">
+                    <button type="button" class="btn text-start">All Tasks</button>
+                    <button type="button" class="btn text-start">Upcoming</button>
+                    <button type="button" class="btn text-start">Completed</button>
+                    <button type="button" class="btn text-start">Calendar</button>
+                    <button type="button" class="btn text-start">Statistics</button>
+                    <button type="button" class="btn text-start">Settings</button>
+                </nav>
+                <div>
+                    <h2 class="fs-5 fw-semibold">Task Summary</h2>
+                    <p>Total Tasks: <span id="total-tasks">0</span></p>
+                    <p>Completed: <span id="completed-tasks">0</span></p>
+                    <p>Completion Rate: <span id="completion-rate">0</span>%</p>
+                    <div class="progress" id="progress-bar">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </aside>
 
-    <div class="accordion" id="accordionCreateTask">
-        <div class="accordion-item ">
-            <h2 class="accordion-header mb-0">
-                <button class="accordion-button d-flex justify-content-center align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                        <i class="bi bi-plus-circle-dotted"></i>&nbsp;AGREGAR NUEVA TAREA
-                </button>
-            </h2><!-- .accordion header -->
-            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionCreateTask">
-                <div class="accordion-body">
-                    <div class="col-md-6 container">
-                        <form id="task-form">
-                            <div class="form-group">
-                                <label for="task-name">Nombre de la Tarea</label>
-                                <input type="text" class="form-control" id="task-name" required>
+            <!-- Main Content -->
+            <main class="col-md-9 p-4">
+                <h2 class="fs-2 fw-bold">Dashboard</h2>
+
+                <!-- Task Input -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3 class="fs-4">Add New Task</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="task-form" class="row g-3">
+                            <div class="col-md-4">
+                                <input type="text" id="new-task" class="form-control" placeholder="Enter task title">
                             </div>
-                            <div class="form-group">
-                                <label for="task-desc">Descripción</label>
-                                <textarea class="form-control" id="task-desc" rows="3"></textarea>
+                            <div class="col-md-3">
+                                <select id="new-task-category" class="form-select">
+                                    <option selected value="Work">Work</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="Health">Health</option>
+                                    <option value="Finance">Finance</option>
+                                </select>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-4">Agregar Tarea</button>
+                            <div class="col-md-3">
+                                <input type="date" id="new-task-due-date" class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary">Add Task</button>
+                            </div>
                         </form>
                     </div>
                 </div>
-            </div><!-- .accordion body -->
-        </div>
-    </div><!-- .add new task -->
 
-    <div class="container mt-4">
-        <div class="col">
-            <div class="col-md-6">
-                <h2>Lista de Tareas</h2>
-                <ul id="task-list" class="list-group"></ul>
-            </div>
+                <!-- Task List -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="fs-4">Tasks</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <button id="filter-all" class="btn btn-outline-primary">All</button>
+                            <button id="filter-active" class="btn btn-outline-primary">Active</button>
+                            <button id="filter-completed" class="btn btn-outline-primary">Completed</button>
+                            <!-- Repeat buttons for each category -->
+                        </div>
+                        <ul id="task-list" class="list-group"></ul>
+                    </div>
+                </div>
+            </main>
         </div>
-    </div> <!-- .task list -->
+    </div>
+
 
     <script type="text/module" src="js/main.mjs"></script>
 </body>

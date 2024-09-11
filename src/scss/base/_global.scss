@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+
+html {
+    box-sizing: border-box;
+    scroll-padding-top: 0;
+    scroll-behavior: smooth;
+}
+*, 
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #f3f4f6;
+    &.overflow-hidden {
+        overflow: hidden;
+    }
+}
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+aside {
+    background-color: white;
+    padding: 2rem;
+}
+.card {
+    margin-bottom: 2rem;
+}
+#task-list .completed {
+    text-decoration: line-through;
+    color: gray;
+}
