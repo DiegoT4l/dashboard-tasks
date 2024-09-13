@@ -16,31 +16,32 @@
     <div class="container-fluid">
         <div class="row vh-100">
             <!-- Sidebar -->
-            <aside class="col-md-3 bg-white shadow-sm p-4" style="width: 16%;">
+            <aside class="col-md-2 bg-white shadow-sm p-4">
                 <h1 class="fs-3 fw-bold mb-4">Task Master</h1>
                 <nav class="nav flex-column mb-5">
-                    <button type="button" class="btn text-start"><i class="bi bi-list-ul"></i> All Tasks</button>
-                    <button type="button" class="btn text-start"><i class="bi bi-clock"></i> Upcoming</button>
-                    <button type="button" class="btn text-start"><i class="bi bi-check2-circle"></i> Completed</button>
-                    <button type="button" class="btn text-start"><i class="bi bi-calendar4"></i> Calendar</button>
-                    <button type="button" class="btn text-start"><i class="bi bi-bar-chart-line"></i>
-                        Statistics</button>
-                    <button type="button" class="btn text-start"><i class="bi bi-gear"></i> Settings</button>
+                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-list-ul me-2"></i> All Tasks</button>
+                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-clock me-2"></i> Upcoming</button>
+                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-check2-circle me-2"></i> Completed</button>
+                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-calendar4 me-2"></i> Calendar</button>
+                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-bar-chart-line me-2"></i>Statistics</button>
+                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-gear me-2"></i> Settings</button>
                 </nav>
-                <div>
-                    <h2 class="fs-5 fw-semibold">Task Summary</h2>
-                    <p>Total Tasks: <span id="total-tasks">0</span></p>
-                    <p>Completed: <span id="completed-tasks">0</span></p>
-                    <p>Completion Rate: <span id="completion-rate">0</span>%</p>
-                    <div class="progress w-75" role="progressbar" id="progress-bar"
-                        style="height: 8px; background-color: #d0d0d1;">
-                        <div class="progress-bar bg-dark" role="progressbar" style="width: 10%;"></div>
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h2 class="fs-5 fw-semibold card-title">Task Summary</h2>
+                        <p>Total Tasks: <span id="total-tasks">0</span></p>
+                        <p>Completed: <span id="completed-tasks">0</span></p>
+                        <p>Completion Rate: <span id="completion-rate">0</span>%</p>
+                        <div class="progress w-75" role="progressbar" id="progress-bar"
+                            style="height: 8px; background-color: #d0d0d1;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 10%;"></div>
+                        </div>
                     </div>
                 </div>
             </aside>
 
             <!-- Main Content -->
-            <main class="col-md-9 p-4">
+            <main class="col-md-10 p-4">
                 <h2 class="fs-2 fw-bold">Dashboard</h2>
 
                 <!-- Task Input -->
@@ -79,11 +80,31 @@
                         <h3 class="fs-4">Tasks</h3>
                     </div>
                     <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3">
-                            <button id="filter-all" class="btn btn-outline-primary">All</button>
-                            <button id="filter-active" class="btn btn-outline-primary">Active</button>
-                            <button id="filter-completed" class="btn btn-outline-primary">Completed</button>
-                            <!-- Repeat buttons for each category -->
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                    aria-selected="true">Home</button>
+                                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                    aria-selected="false">Profile</button>
+                                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                    aria-selected="false">Contact</button>
+                                <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled"
+                                    aria-selected="false" disabled>Disabled</button>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-profile-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                                aria-labelledby="nav-contact-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="nav-disabled" role="tabpanel"
+                                aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
                         </div>
                         <ul id="task-list" class="list-group"></ul>
                     </div>
