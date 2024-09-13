@@ -12,9 +12,11 @@ html {
     box-sizing: inherit;
 }
 body {
+    font-family: $principalFont;
     font-optical-sizing: auto;
     font-style: normal;
     background-color: #f3f4f6;
+    
     &.overflow-hidden {
         overflow: hidden;
     }
@@ -35,4 +37,9 @@ aside {
 #task-list .completed {
     text-decoration: line-through;
     color: gray;
+}
+button {
+    font-weight: 500;
+    font-size: 0.88rem;
+    line-height: 1.25rem;
 }

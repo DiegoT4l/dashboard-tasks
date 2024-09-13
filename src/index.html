@@ -7,8 +7,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
     <title>Dashboard Tasks</title>
 </head>
@@ -17,14 +16,15 @@
     <div class="container-fluid">
         <div class="row vh-100">
             <!-- Sidebar -->
-            <aside class="col-md-3 bg-white shadow-sm p-4" style="width: 18%;">
+            <aside class="col-md-3 bg-white shadow-sm p-4" style="width: 16%;">
                 <h1 class="fs-3 fw-bold mb-4">Task Master</h1>
                 <nav class="nav flex-column mb-5">
                     <button type="button" class="btn text-start"><i class="bi bi-list-ul"></i> All Tasks</button>
                     <button type="button" class="btn text-start"><i class="bi bi-clock"></i> Upcoming</button>
                     <button type="button" class="btn text-start"><i class="bi bi-check2-circle"></i> Completed</button>
                     <button type="button" class="btn text-start"><i class="bi bi-calendar4"></i> Calendar</button>
-                    <button type="button" class="btn text-start"><i class="bi bi-bar-chart-line"></i> Statistics</button>
+                    <button type="button" class="btn text-start"><i class="bi bi-bar-chart-line"></i>
+                        Statistics</button>
                     <button type="button" class="btn text-start"><i class="bi bi-gear"></i> Settings</button>
                 </nav>
                 <div>
@@ -32,8 +32,9 @@
                     <p>Total Tasks: <span id="total-tasks">0</span></p>
                     <p>Completed: <span id="completed-tasks">0</span></p>
                     <p>Completion Rate: <span id="completion-rate">0</span>%</p>
-                    <div class="progress" id="progress-bar">
-                        <div class="progress-bar" role="progressbar" style="width: 0%;"></div>
+                    <div class="progress w-75" role="progressbar" id="progress-bar"
+                        style="height: 8px; background-color: #d0d0d1;">
+                        <div class="progress-bar bg-dark" role="progressbar" style="width: 10%;"></div>
                     </div>
                 </div>
             </aside>
@@ -65,7 +66,8 @@
                                 <input type="date" id="new-task-due-date" class="form-control">
                             </div>
                             <div class="col-md-2 create-task">
-                                <button type="submit" class="btn create-task__button"><i class="bi bi-plus"></i> Add Task</button>
+                                <button type="submit" class="btn create-task__button"><i class="bi bi-plus"></i> Add
+                                    Task</button>
                             </div>
                         </form>
                     </div>
