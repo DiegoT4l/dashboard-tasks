@@ -7,6 +7,7 @@ taskManager.loadTasks();
 function renderTasks() {
     const tasks = taskManager.getTasks();
     const taskList = $('#task-list');
+
     taskList.empty();
     tasks.forEach(task => {
         const taskItem = $(`
@@ -22,6 +23,13 @@ function renderTasks() {
         </li>
         `);
         taskList.append(taskItem);
+
+        $("#total-tasks").text(tasks.length);
+        const completedTasks = tasks.filter((task) => task.completed).length;
+        $("#completed-tasks").text(completedTasks);
+        const completionRate = tasks.length ? (completedTasks / tasks.length) * 100 : 0;
+        $("#completion-rate").text(completionRate.toFixed(2));
+        $(".progress-bar").css("width", `${completionRate}%`);
     });
 }
 
