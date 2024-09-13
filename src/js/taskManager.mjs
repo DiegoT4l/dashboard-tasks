@@ -3,11 +3,12 @@ export default class TaskManager {
         this.tasks = [];
     }
 
-    addTask(name, description) {
+    addTask(name, category, dueDate) {
         const task = {
-            id: Date.now(),
+            id: Date.now() + Math.floor(Math.random() * 1000),
             name: name,
-            description: description,
+            category: category,
+            dueDate: dueDate,
             completed: false
         };
         this.tasks.push(task);

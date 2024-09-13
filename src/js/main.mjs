@@ -10,11 +10,16 @@ function renderTasks() {
     taskList.empty();
     tasks.forEach(task => {
         const taskItem = $(`
-            <li class="list-group-item ${task.completed ? 'list-group-item-success' : ''}">
-                <span>${task.name}</span>
-                <button class="btn btn-sm btn-danger float-right delete-task" data-id="${task.id}">Eliminar</button>
-                <button class="btn btn-sm btn-secondary float-right mr-2 complete-task" data-id="${task.id}">${task.completed ? 'Desmarcar' : 'Completar'}</button>
-            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <input type="checkbox" class="form-check-input me-2" ${task.completed ? "checked" : ""}>
+            <span class="${task.completed ? "text-secondary text-decoration-line-through" : ""}">${task.name}</span>
+          </div>
+          <div>
+            <span class="text-secondary">${task.category}</span><span class="text-secondary"> ${task.dueDate}</span>
+            <button class="btn btn-sm ms-2 delete-task" data-id="${task.id}"><i class="bi bi-trash"></i></button>
+          </div>
+        </li>
         `);
         taskList.append(taskItem);
     });
@@ -22,9 +27,10 @@ function renderTasks() {
 
 $('#task-form').on('submit', function (event) {
     event.preventDefault();
-    const name = $('#task-name').val();
-    const description = $('#task-desc').val();
-    taskManager.addTask(name, description);
+    const name = $('#new-task-name').val();
+    const category = $('#new-task-category').val();
+    const date = $('#new-task-due-date').val() || 'No Due Date';
+    taskManager.addTask(name, category, date);
     renderTasks();
     this.reset();
     console.log(taskManager.getTasks());
@@ -36,8 +42,8 @@ $('#task-list').on('click', '.delete-task', function () {
     renderTasks();
 });
 
-$('#task-list').on('click', '.complete-task', function () {
-    const id = $(this).data('id');
+$('#task-list').on('change', '.form-check-input', function () {
+    const id = $(this).closest('li').find('.delete-task').data('id');
     taskManager.toggleTaskCompletion(id);
     renderTasks();
 });
