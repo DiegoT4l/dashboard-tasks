@@ -1,0 +1,14 @@
+@use '../base/variables' as var;
+
+
+.create-task {
+    button {
+        background-color: var.$BUTTONBLACK;
+        color: var.$WHITE;
+
+        &:hover {
+            background-color: var.$BUTTONBLACK;
+            color: var.$WHITE;
+        }
+    }
+}

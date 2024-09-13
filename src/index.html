@@ -17,15 +17,15 @@
     <div class="container-fluid">
         <div class="row vh-100">
             <!-- Sidebar -->
-            <aside class="col-md-3 bg-white shadow-md p-4">
+            <aside class="col-md-3 bg-white shadow-sm p-4" style="width: 18%;">
                 <h1 class="fs-3 fw-bold mb-4">Task Master</h1>
                 <nav class="nav flex-column mb-5">
-                    <button type="button" class="btn text-start">All Tasks</button>
-                    <button type="button" class="btn text-start">Upcoming</button>
-                    <button type="button" class="btn text-start">Completed</button>
-                    <button type="button" class="btn text-start">Calendar</button>
-                    <button type="button" class="btn text-start">Statistics</button>
-                    <button type="button" class="btn text-start">Settings</button>
+                    <button type="button" class="btn text-start"><i class="bi bi-list-ul"></i> All Tasks</button>
+                    <button type="button" class="btn text-start"><i class="bi bi-clock"></i> Upcoming</button>
+                    <button type="button" class="btn text-start"><i class="bi bi-check2-circle"></i> Completed</button>
+                    <button type="button" class="btn text-start"><i class="bi bi-calendar4"></i> Calendar</button>
+                    <button type="button" class="btn text-start"><i class="bi bi-bar-chart-line"></i> Statistics</button>
+                    <button type="button" class="btn text-start"><i class="bi bi-gear"></i> Settings</button>
                 </nav>
                 <div>
                     <h2 class="fs-5 fw-semibold">Task Summary</h2>
@@ -43,7 +43,7 @@
                 <h2 class="fs-2 fw-bold">Dashboard</h2>
 
                 <!-- Task Input -->
-                <div class="card mb-4">
+                <div class="card mb-4 shadow-sm">
                     <div class="card-header">
                         <h3 class="fs-4">Add New Task</h3>
                     </div>
@@ -64,15 +64,15 @@
                             <div class="col-md-3">
                                 <input type="date" id="new-task-due-date" class="form-control">
                             </div>
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-primary">Add Task</button>
+                            <div class="col-md-2 create-task">
+                                <button type="submit" class="btn create-task__button"><i class="bi bi-plus"></i> Add Task</button>
                             </div>
                         </form>
                     </div>
                 </div>
 
                 <!-- Task List -->
-                <div class="card">
+                <div class="card shadow-sm">
                     <div class="card-header">
                         <h3 class="fs-4">Tasks</h3>
                     </div>
