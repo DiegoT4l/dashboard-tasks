@@ -19,19 +19,32 @@
             <aside class="col-md-2 bg-white shadow-sm p-4">
                 <h1 class="fs-3 fw-bold mb-4">Task Master</h1>
                 <nav class="nav flex-column mb-5">
-                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-list-ul me-2"></i> All Tasks</button>
-                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-clock me-2"></i> Upcoming</button>
-                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-check2-circle me-2"></i> Completed</button>
-                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-calendar4 me-2"></i> Calendar</button>
-                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-bar-chart-line me-2"></i>Statistics</button>
-                    <button type="button" class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i class="bi bi-gear me-2"></i> Settings</button>
+                    <button type="button"
+                        class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i
+                            class="bi bi-list-ul me-2"></i> All Tasks</button>
+                    <button type="button"
+                        class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i
+                            class="bi bi-clock me-2"></i> Upcoming</button>
+                    <button type="button"
+                        class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i
+                            class="bi bi-check2-circle me-2"></i> Completed</button>
+                    <button type="button"
+                        class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i
+                            class="bi bi-calendar4 me-2"></i> Calendar</button>
+                    <button type="button"
+                        class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i
+                            class="bi bi-bar-chart-line me-2"></i>Statistics</button>
+                    <button type="button"
+                        class="d-inline-flex justify-content-lg-start align-items-center text-nowrap px-4 py-2 btn text-start fw-meidum hover:bg-secondary hover:text-light"><i
+                            class="bi bi-gear me-2"></i> Settings</button>
                 </nav>
                 <div class="card border-0">
                     <div class="card-body">
                         <h2 class="fs-5 fw-semibold card-title">Task Summary</h2>
                         <p>Total Tasks: <span id="total-tasks">0</span></p>
                         <p>Completed: <span id="completed-tasks">0</span></p>
-                        <p class="text-nowrap">Completion Rate: <span class="text-nowrap" id="completion-rate">0</span>%</p>
+                        <p class="text-nowrap">Completion Rate: <span class="text-nowrap" id="completion-rate">0</span>%
+                        </p>
                         <div class="progress" role="progressbar" id="progress-bar"
                             style="height: 8px; background-color: #d0d0d1;">
                             <div class="progress-bar bg-dark" role="progressbar" style="width: 0%;"></div>
@@ -52,7 +65,8 @@
                     <div class="card-body">
                         <form id="task-form" class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" id="new-task-name" class="form-control" placeholder="Enter task title">
+                                <input type="text" id="new-task-name" class="form-control"
+                                    placeholder="Enter task title">
                             </div>
                             <div class="col-md-2">
                                 <select id="new-task-category" class="form-select">
@@ -82,43 +96,52 @@
                     <div class="card-body">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link active text-reset" id="nav-home-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                <button class="nav-link active text-reset" id="nav-all-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-all" type="button" role="tab" aria-controls="nav-all"
                                     aria-selected="true">All</button>
                                 <button class="nav-link text-reset" id="nav-active-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-active" type="button" role="tab" aria-controls="nav-active"
                                     aria-selected="false">active</button>
-                                <button class="nav-link text-reset" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
-                                    aria-selected="false">Completed</button>
-                                    <button class="nav-link text-reset" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                <button class="nav-link text-reset" id="nav-completed-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-completed" type="button" role="tab"
+                                    aria-controls="nav-completed" aria-selected="false">Completed</button>
+                                <button class="nav-link text-reset" id="nav-work-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-work" type="button" role="tab" aria-controls="nav-work"
                                     aria-selected="false">Work</button>
-                                    <button class="nav-link text-reset" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                <button class="nav-link text-reset" id="nav-personal-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-personal" type="button" role="tab" aria-controls="nav-personal"
                                     aria-selected="false">Personal</button>
-                                    <button class="nav-link text-reset" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                <button class="nav-link text-reset" id="nav-shopping-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-shopping" type="button" role="tab" aria-controls="nav-shopping"
                                     aria-selected="false">Shopping</button>
-                                    <button class="nav-link text-reset" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                <button class="nav-link text-reset" id="nav-health-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-health" type="button" role="tab" aria-controls="nav-health"
                                     aria-selected="false">Health</button>
-                                    <button class="nav-link text-reset" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                <button class="nav-link text-reset" id="nav-finance-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-finance" type="button" role="tab" aria-controls="nav-finance"
                                     aria-selected="false">Finance</button>
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                aria-labelledby="nav-home-tab" tabindex="0">...</div>
-                            <div class="tab-pane fade" id="nav-active" role="tabpanel"
-                                aria-labelledby="nav-active-tab" tabindex="0">...</div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                aria-labelledby="nav-contact-tab" tabindex="0">...</div>
-                            <div class="tab-pane fade" id="nav-disabled" role="tabpanel"
-                                aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab" tabindex="0">
+                                <ul id="all-task-list" class="list-group"></ul>
+                            </div> <!-- .All Tasks -->
+                            <div class="tab-pane fade" id="nav-active" role="tabpanel" aria-labelledby="nav-active-tab"
+                                tabindex="0"><ul id="active-task-list" class="list-group"></ul></div> <!-- .Active Tasks -->
+                            <div class="tab-pane fade" id="nav-completed" role="tabpanel"
+                                aria-labelledby="nav-completed-tab" tabindex="0"><ul id="completed-task-list" class="list-group"></ul></div> <!-- .Completed Tasks -->
+                            <div class="tab-pane fade" id="nav-work" role="tabpanel" aria-labelledby="nav-work-tab"
+                                tabindex="0"><ul id="work-task-list" class="list-group"></ul></div> <!-- .Work Tasks -->
+                            <div class="tab-pane fade" id="nav-personal" role="tabpanel" aria-labelledby="nav-personal-tab"
+                                tabindex="0"><ul id="personal-task-list" class="list-group"></ul></div> <!-- .Personal Tasks -->
+                            <div class="tab-pane fade" id="nav-shopping" role="tabpanel" aria-labelledby="nav-shopping-tab"
+                                tabindex="0"><ul id="shopping-task-list" class="list-group"></ul></div> <!-- .Shopping Tasks -->
+                            <div class="tab-pane fade" id="nav-health" role="tabpanel" aria-labelledby="nav-health-tab"
+                                tabindex="0"><ul id="health-task-list" class="list-group"></ul></div> <!-- .Health Tasks -->
+                            <div class="tab-pane fade" id="nav-finance" role="tabpanel" aria-labelledby="nav-finance-tab"
+                                tabindex="0"><ul id="finance-task-list" class="list-group"></ul></div> <!-- .Finance Tasks -->
                         </div>
-                        <ul id="task-list" class="list-group"></ul>
+
                     </div>
                 </div>
             </main>

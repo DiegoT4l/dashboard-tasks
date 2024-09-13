@@ -4,12 +4,28 @@ import TaskManager from './taskManager.mjs';
 const taskManager = new TaskManager();
 taskManager.loadTasks();
 
-function renderTasks() {
+//filter tasks
+
+
+function renderTasks(filter = 'all') {
     const tasks = taskManager.getTasks();
-    const taskList = $('#task-list');
+    const taskList = $(`#${filter}-task-list`);
+
+    const filters = {
+        all: tasks => tasks,
+        active: tasks => tasks.filter(task => !task.completed),
+        completed: tasks => tasks.filter(task => task.completed),
+        work: tasks => tasks.filter(task => task.category === 'Work'),
+        personal: tasks => tasks.filter(task => task.category === 'Personal'),
+        shopping: tasks => tasks.filter(task => task.category === 'Shopping'),
+        health: tasks => tasks.filter(task => task.category === 'Health'),
+        finance: tasks => tasks.filter(task => task.category === 'Finance')
+    };
+
+    const filteredTasks = (filters[filter] || filters['all'])(tasks);
 
     taskList.empty();
-    tasks.forEach(task => {
+    filteredTasks.forEach(task => {
         const taskItem = $(`
             <li class="list-group-item d-flex justify-content-between align-items-center">
           <div>
@@ -41,20 +57,26 @@ $('#task-form').on('submit', function (event) {
     taskManager.addTask(name, category, date);
     renderTasks();
     this.reset();
-    console.log(taskManager.getTasks());
 });
 
-$('#task-list').on('click', '.delete-task', function () {
+$('#nav-tab').on('click', '.nav-link', function () {
+    const id = $(this).data('bs-target');
+    const tasksFilter = id.split('-')[1];
+    renderTasks(tasksFilter);
+});
+
+$('.list-group').on('click', '.delete-task', function () {
     const id = $(this).data('id');
     taskManager.deleteTask(id);
     renderTasks();
 });
 
-$('#task-list').on('change', '.form-check-input', function () {
+$('.list-group').on('change', '.form-check-input', function () {
     const id = $(this).closest('li').find('.delete-task').data('id');
     taskManager.toggleTaskCompletion(id);
     renderTasks();
 });
+
 
 $(document).ready(function () {
     renderTasks();
